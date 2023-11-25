@@ -1,0 +1,107 @@
+/* STYLE SECTIONING TAGS */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+/* details on entire page */
+body {
+  font-family:'Courier New', Courier, monospace;
+  background-color: rgb(255, 236, 195);
+  text-align: center;}
+
+/* title */
+header {
+  color: black;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;}
+
+/* details on all words */
+main {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/* details on paragraphs*/
+p {
+  color: black;
+  font-size: 1.3em;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3%;
+} 
+
+/* second title details*/
+h1 {
+  color: black;
+  margin-top: 1em;
+  font-size: 3.5em;
+}
+/* third title details*/
+h2 {
+  color: black;
+  margin-top: 0.5em;
+  font-size: 3em;
+}
+
+/* fourth title details*/
+h3 {
+  color: black;
+  margin-top: 0.5em;
+  font-size: 2em;
+}
+
+/* paragraph about me is in purple*/
+.name {
+  color:black
+}
+
+/* carnegie hall picture has rounded border*/
+#CarnegieHall {
+  border-radius: 10%;
+}
+
+/* all image settings */
+img {
+  max-width: 70%;
+  border: 5px solid white;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+/* navigation settings */
+nav {
+  color: black;
+  text-align: center;
+}
+
+/*gives navigation the horizontal bar in different color*/
+ul {
+  list-style-type: none;
+  background-color: peachpuff;
+  overflow: hidden;
+  padding: 1em;
+
+}
+
+/* makes navigation bar horizontal, not vertical*/
+li {
+  display: inline;
+}
+
+/* makes navigation links boxes, not underlined links*/
+li a {
+  text-decoration: none;
+  color: black;
+  padding: 1em;
+}
+
+/* color changed when navigation bar is hovered*/
+li a:hover {
+  background-color: darksalmon;
+}
+
+video {
+  width: 80%;
+  margin-bottom: 2em;
+}
