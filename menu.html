@@ -8,15 +8,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/style.css" />
   <script src="/script.js" defer></script>
+  <style>
+
+		* {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+		nav {
+      background-color: #e1e0e4;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+			padding: 14px 16px;
+    }
+
+    li {
+      display: inline;
+    }
+
+    li a {
+      text-decoration: none;
+      color: #333;
+      padding: 14px 16px;
+			text-align: center;
+    }
+
+    li a:hover {
+      background-color: #c5c4c8;
+      color: black;
+    }    
+		
+		li a.active {
+      background-color: #c5c4c8;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 1em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-align: center;
+      color: #000000;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    article {
+      margin-bottom: 40px;
+    }
+
+    .bagel-container {
+      text-align: center;
+    }
+
+    .bagel-entry {
+      padding: 20px;
+      border: 1px solid #e1e0e4;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .footerContainer {
+      width: 100%;
+    }
+
+    .footerNav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    .footerNav ul li a {
+      margin: 20px;
+      text-decoration: none;
+      font-size: 1.3em;
+      opacity: 0.7;
+      transition: 0.5s;
+      color: black;
+    }
+
+    .footerNav ul li a:hover {
+      opacity: 1;
+    }
+
+    .footerBottom {
+      padding: 20px;
+      text-align: center;
+      color: black;
+    }
+
+  </style>
 </head>
 
 <body>
 
   <nav>
     <ul>
-      <li><a href="bagelWeb.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a class="active" href="menu.html">Menu</a></li>
       <li><a href="orders.html">Orders</a></li>
+      <li><a href="me.html">About Me</a></li>
     </ul>
   </nav>
 
@@ -35,21 +152,24 @@
           <p>Ingredients: bread flour, dairy-free mozzarella cheese, jalapeno, green sauce, sugar, yeast, salt</p>
           <p>Green sauce ingredients: olive oil, cilantro, parsley, jalapeno, garlic, lime, lemon, sugar, salt, pepper</p>
         </div>
-
-				<div class="bagel-container">
-					<div class="bagel-entry">
-						<h3>Mentaiko Nori</h3>
-						<img src="mentaiko.jpg" alt="Plain Bagel filled with mentaiko paste and nori topping" />
-						<p>				ingredients: bread flour, mentaiko, dairy-free cream cheese, sugar, yeast, salt</p>
-					</div>
-
-					<div class="bagel-container">
-						<div class="bagel-entry">
-							<h3>Sun-dried Tomato and Basil</h3>
-							<img src="tomato.jpg" alt="Jalapeno Cheese Bagel" />
-							<p>Ingredients: bread flour, sun-dried tomatoes, basil, sugar, yeast, salt</p>
-						</div>
       </div>
+
+      <div class="bagel-container">
+        <div class="bagel-entry">
+          <h3>Mentaiko Nori</h3>
+          <img src="mentaiko.jpg" alt="Plain Bagel filled with mentaiko paste and nori topping" />
+          <p>Ingredients: bread flour, mentaiko, dairy-free cream cheese, sugar, yeast, salt</p>
+        </div>
+      </div>
+
+      <div class="bagel-container">
+        <div class="bagel-entry">
+          <h3>Sun-dried Tomato and Basil</h3>
+          <img src="tomato.jpg" alt="Jalapeno Cheese Bagel" />
+          <p>Ingredients: bread flour, sun-dried tomatoes, basil, sugar, yeast, salt</p>
+        </div>
+      </div>
+
     </article>
 
     <article>
@@ -61,31 +181,24 @@
           <img src="walnut.jpg" alt="Cranberry Walnut Bagel" />
           <p>Ingredients: bread flour, cranberries, walnuts, sugar, cinnamon, yeast, salt</p>
         </div>
+      </div>
 
+      <div class="bagel-container">
+        <div class="bagel-entry">
+          <h3>Sweet Potato</h3>
+          <img src="potato.jpg" alt="Sweet Potato Bagel" />
+          <p>Ingredients: bread flour, sweet potato, sugar, yeast, salt</p>
+        </div>
+      </div>
 
-				<!-- fourth bagel -->
-				<div class="bagel-container">
-					<div class="bagel-entry">
-						<h3>Sweet Potato</h3>
-						<img src="potato.jpg" alt="Sweet Potato Bagel" />
-						<p>Ingredients: bread flour, sweet potato, sugar, yeast, salt</p>
-					</div>
-
-
-
-						<!-- fifth bagel -->
-					<div class="bagel-container">
-						<div class="bagel-entry">
-							<h3>Sweet Red Bean w/ Mochi</h3>
-							<img src="redbean.jpg" alt="Plain bagel with sweet red bean and mochi" />
-							<p>Ingredients: bread flour, sweet red bean, mochi, dairy-free cream cheese, sugar, yeast, salt</p>
-							<p>Mochi ingredients: sweet rice flour, sugar, potato starch</p>
-						</div>
-
-
-
-
-						<div class="bagel-container">
+      <div class="bagel-container">
+        <div class="bagel-entry">
+          <h3>Sweet Red Bean w/ Mochi</h3>
+          <img src="redbean.jpg" alt="Plain bagel with sweet red bean and mochi" />
+          <p>Ingredients: bread flour, sweet red bean, mochi, dairy-free cream cheese, sugar, yeast, salt</p>
+          <p>Mochi ingredients: sweet rice flour, sugar, potato starch</p>
+   			
+			<div class="bagel-container">
 							<div class="bagel-entry">
 								<h3>Matcha w/ Red Bean</h3>
 								<img src="matcha.jpg" alt="Matcha Bagel with red bean" />
@@ -105,124 +218,14 @@
     </article>
   </section>
 
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-			padding-bottom: 10%;
-      background-color: #fbeee6;
-      color: #000000;
-    }
-
-    header {
-      color: #000000;
-      text-align: center;
-      padding: 1em;
-    }
-
-    h1,
-    h2,
-    h3 {
-      text-align: center;
-      color: #000000;
-    }
-
-    nav {
-      color: black;
-      text-align: center;
-    }
-
-    ul {
-      list-style-type: none;
-      background-color: #eddbdf;
-      overflow: hidden;
-      padding: 1em;
-    }
-
-    li {
-      display: inline;
-    }
-
-    li a {
-      text-decoration: none;
-      color: black;
-      padding: 1em;
-    }
-
-    li a:hover {
-      background-color: #f4c8ca;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    article {
-      margin-bottom: 40px;
-    }
-
-    .bagel-container {
-      text-align: center;
-    }
-
-    .bagel-entry {
-      padding: 20px;
-      border: 1px solid #eddbdf;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    .footerContainer {
-      width: 100%;
-    }
-
-    .footerNav ul {
-      display: flex;
-      justify-content: center;
-    }
-
-    .footerNav ul li a {
-      margin: 20px;
-      text-decoration: none;
-      font-size: 1.3em;
-      opacity: 0.7;
-      transition: 0.5s;
-      color: white;
-    }
-
-    .footerNav ul li a:hover {
-      opacity: 1;
-    }
-
-    .footerBottom {
-      text-align: center;
-      color: black;
-    }
-  </style>20
-
   <footer>
     <div class="footerContainer">
       <div class="footerNav">
         <ul>
-          <li><a href="bagelWeb.html">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="orders.html">Order</a></li>
-          <li><a href="bagelWeb.html">About me</a></li>
-          <li><a href="menu.html">Contact Info</a></li>
+          <li><a href="me.html">About me</a></li>
         </ul>
       </div>
     </div>
@@ -233,5 +236,4 @@
   </footer>
 
 </body>
-
 </html>
