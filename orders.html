@@ -12,54 +12,39 @@
   <script src="/script.js" defer></script>
 
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
+    /* ... (Your existing styles) ... */
+
+    .note {
+      margin-top: 20px;
+      margin-left: 20px;
+      font-style: italic;
+      color: #777;
+    }
+
+    /* Basic Reset */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #fbeee6;
-      color: #000000;
+      box-sizing: border-box;
     }
 
-    header {
-      color: #000000;
-      text-align: center;
-      padding: 1em;
-    }
-
-    h1,
-    h2,
-    h3 {
-      text-align: center;
-      color: #000000;
-      padding-bottom: 10px;
-    }
-
-    button {
-      background-color: #333;
-      color: #fff;
-      padding: 15px 20px;
-      border: none;
-      cursor: pointer;
-    }
-
-    p {
-      color: black;
-      font-size: 1em;
-      margin-left: 10%;
-      margin-right: 10%;
-      margin-bottom: 3%;
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4;
     }
 
     nav {
-      color: black;
-      text-align: center;
+      background-color: #e1e0e4;
+      overflow: hidden;
     }
 
     ul {
       list-style-type: none;
-      background-color: #eddbdf;
-      overflow: hidden;
-      padding: 1em;
+      display: flex;
+      justify-content: space-around;
+			padding: 14px 16px;
     }
 
     li {
@@ -68,12 +53,29 @@
 
     li a {
       text-decoration: none;
-      color: black;
-      padding: 1em;
+      color: #333;
+      padding: 14px 16px;
+			text-align: center;
     }
 
     li a:hover {
-      background-color: #f4c8ca;
+      background-color: #c5c4c8;
+      color: black;
+    }    
+		
+		li a.active {
+      background-color: #c5c4c8;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 1%;
+      margin-top: 3%;
     }
 
     section {
@@ -86,9 +88,10 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
-      background-color: #eddbdf;
+      background-color: #e1e0e4;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
     }
 
     label {
@@ -103,6 +106,14 @@
       padding: 10px;
       margin-bottom: 16px;
       box-sizing: border-box;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 20px;
+      border: none;
+      cursor: pointer;
     }
 
     .popup {
@@ -133,12 +144,6 @@
       cursor: pointer;
     }
 
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
     .footerContainer {
       width: 100%;
     }
@@ -154,7 +159,7 @@
       font-size: 1.3em;
       opacity: 0.7;
       transition: 0.5s;
-      color: white;
+      color: black;
     }
 
     .footerNav ul li a:hover {
@@ -164,18 +169,20 @@
     .footerBottom {
       padding: 20px;
       text-align: center;
-      color: white;
+      color: black;
     }
   </style>
 </head>
+
 
 <body>
 
   <nav>
     <ul>
-      <li><a href="bagelWeb.html">Home</a></li>
+      <li><a href="home.html">Home</a></li>
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="orders.html">Orders</a></li>
+      <li><a class="active" href="orders.html">Orders</a></li>
+      <li><a href="me.html">About Me</a></li>
     </ul>
   </nav>
 
@@ -183,9 +190,16 @@
     <h1>ORDERS</h1>
   </header>
 
-  <section>
-    <form id="orderForm">
-      <label for="name">Name:</label>
+
+
+	  <!-- ... (Your existing content) ... -->
+
+		<section>
+			<div class="note">
+				Note: Maximum of 6 bagels per flavor.
+			</div>
+			<form id="orderForm">
+				<label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="email">Email:</label>
@@ -220,18 +234,17 @@
       </div>
     </div>
 
-  </section>
+		</section>
 
   <footer>
     <div class="footerContainer">
-			<p> </p>
+      <p> </p>
       <div class="footerNav">
         <ul>
-          <li><a href="bagelWeb.html">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="orders.html">Order</a></li>
-          <li><a href="bagelWeb.html">About me</a></li>
-          <li><a href="menu.html">Contact Info</a></li>
+          <li><a href="me.html">About me</a></li>
         </ul>
       </div>
     </div>
@@ -255,6 +268,27 @@
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
 		var address = document.getElementById("address").value;
+
+    // Check if the email contains '@'
+    if (email.indexOf('@') === -1) {
+      // Display error message
+      alert("Invalid email address. Please include '@' in your email.");
+      return; // Prevent further processing
+    }
+	
+    // Check if quantity is a number
+    if (isNaN(quantity) || quantity <= 0) {
+      // Display error message for invalid quantity
+      alert("Invalid quantity. Please enter a valid number greater than 0.");
+      return; // Prevent further processing
+    }
+
+    // Limit the quantity to a maximum of 6 bagels per flavor
+    if (quantity > 6) {
+      // Display error message for exceeding maximum quantity
+      alert("You can order a maximum of 6 bagels per flavor.");
+      return; // Prevent further processing
+    }
 
     // Create a message with the order details
     var message = "<p>Thank you for your order! I have received the following details:</p>" +
