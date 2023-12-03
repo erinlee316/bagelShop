@@ -12,8 +12,6 @@
   <script src="/script.js" defer></script>
 
   <style>
-    /* ... (Your existing styles) ... */
-
     .note {
       margin-top: 20px;
       margin-left: 20px;
@@ -66,6 +64,18 @@
 		li a.active {
       background-color: #c5c4c8;
       color: white;
+    }
+
+    a {
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    a:hover {
+      text-decoration: underline;
     }
 
     header {
@@ -144,32 +154,9 @@
       cursor: pointer;
     }
 
-    .footerContainer {
-      width: 100%;
-    }
-
-    .footerNav ul {
-      display: flex;
-      justify-content: center;
-    }
-
-    .footerNav ul li a {
-      margin: 20px;
-      text-decoration: none;
-      font-size: 1.3em;
-      opacity: 0.7;
-      transition: 0.5s;
-      color: black;
-    }
-
-    .footerNav ul li a:hover {
-      opacity: 1;
-    }
-
-    .footerBottom {
+    footer {
       padding: 20px;
       text-align: center;
-      color: black;
     }
   </style>
 </head>
@@ -191,8 +178,12 @@
   </header>
 
 
-		<section>
-			<div class="note">
+		<section>			
+      <div class="note">
+				**I will be out of town for winter break, but I will be back to
+         take orders starting January 29, 2024. See you in the new year!
+			</div>
+      <div class="note">
 				Note: Maximum of 6 bagels per flavor.
 			</div>
 			<form id="orderForm">
@@ -209,12 +200,11 @@
       <select id="bagel-type" name="bagel-type" required>
         <option value="Jalapeno Cheese w/ Green Sauce">Jalapeno Cheese w/ Green Sauce</option>
         <option value="Mentaiko Nori">Mentaiko Nori</option>
-        <option value="Sun-dried Tomato and Basil" disabled>Sun-dried Tomato and Basil (not in season)</option>
+        <option value="Kimchi Green Onion">Kimchi Green Onion</option>
         <option value="Cranberry Walnut">Cranberry Walnut</option>
         <option value="Sweet Potato">Sweet Potato</option>
         <option value="Sweet Red Bean w/ Mochi" disabled>Sweet Red Bean w/ Mochi (currently unavailable)</option>
-        <option value="Matcha w/ Sweet Red Bean" disabled>Matcha w/ Sweet Red Bean (currently unavailable)</option>
-        <option value="Apple Crisp">Apple Crisp</option>
+        <option value="Apple Crisp" disabled>Apple Crisp (currently unavailable)</option>
       </select>
 
       <label for="quantity">Quantity:</label>
@@ -234,22 +224,7 @@
 		</section>
 
   <footer>
-    <div class="footerContainer">
-      <p> </p>
-      <div class="footerNav">
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="orders.html">Order</a></li>
-          <li><a href="me.html">About me</a></li>
-        </ul>
-      </div>
-    </div>
-
-
-    <div class="footerBottom">
-      <p>&copy; 2022 Erin Lee's Bagel Shop. All rights reserved.</p>
-    </div>
+    <p>&copy; 2022 Erin Lee's Bagel Shop. All rights reserved.</p>
   </footer>
 
 </body>
@@ -258,7 +233,17 @@
 
 
 <script>
+  // Variable to control whether orders are accepted
+  var ordersAccepted = false;
+
 	function submitOrder() {
+    // Check if orders are currently accepted
+    if (!ordersAccepted) {
+      alert("Orders are currently not accepted. Please come back to order on January 29, 2024.");
+      return;
+    }
+
+    else {
     // Retrieve form data
     var bagelType = document.getElementById("bagel-type").value;
     var quantity = document.getElementById("quantity").value;
@@ -313,4 +298,5 @@
     var popup = document.getElementById("popup");
     popup.style.display = "none";
   }
+}
 </script>
