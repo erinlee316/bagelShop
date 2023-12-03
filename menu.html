@@ -56,6 +56,18 @@
       color: white;
     }
 
+    a {
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+
     header {
       text-align: center;
       padding: 1em;
@@ -95,32 +107,9 @@
       border-radius: 8px;
     }
 
-    .footerContainer {
-      width: 100%;
-    }
-
-    .footerNav ul {
-      display: flex;
-      justify-content: center;
-    }
-
-    .footerNav ul li a {
-      margin: 20px;
-      text-decoration: none;
-      font-size: 1.3em;
-      opacity: 0.7;
-      transition: 0.5s;
-      color: black;
-    }
-
-    .footerNav ul li a:hover {
-      opacity: 1;
-    }
-
-    .footerBottom {
+    footer {
       padding: 20px;
       text-align: center;
-      color: black;
     }
 
   </style>
@@ -147,7 +136,7 @@
 
       <div class="bagel-container">
         <div class="bagel-entry">
-          <h3>Jalapeno Cheese w/ Green Sauce</h3>
+          <h3>Jalapeno Cheese w/ Green Sauce $3.50 </h3>
           <img src="jalapeno.jpg" alt="Jalapeno Cheese Bagel with green sauce" />
           <p>Ingredients: bread flour, dairy-free mozzarella cheese, jalapeno, green sauce, sugar, yeast, salt</p>
           <p>Green sauce ingredients: olive oil, cilantro, parsley, jalapeno, garlic, lime, lemon, sugar, salt, pepper</p>
@@ -156,17 +145,19 @@
 
       <div class="bagel-container">
         <div class="bagel-entry">
-          <h3>Mentaiko Nori</h3>
+          <h3>Mentaiko Nori $3.00</h3>
           <img src="mentaiko.jpg" alt="Plain Bagel filled with mentaiko paste and nori topping" />
-          <p>Ingredients: bread flour, mentaiko, dairy-free cream cheese, sugar, yeast, salt</p>
+          <p>Ingredients: bread flour, mentaiko, dairy-free cream cheese, sugar, sesame seeds, yeast, salt</p>
         </div>
       </div>
 
       <div class="bagel-container">
         <div class="bagel-entry">
-          <h3>Sun-dried Tomato and Basil</h3>
-          <img src="tomato.jpg" alt="Jalapeno Cheese Bagel" />
-          <p>Ingredients: bread flour, sun-dried tomatoes, basil, sugar, yeast, salt</p>
+          <h3>Kimchi Green Onion $3.00</h3>
+          <img src="kimchi.jpg" alt="Kimchi Bagel" />
+          <p>Ingredients: bread flour, kimchi, sugar, yeast, salt</p>
+          <p>Kimchi Ingredients: napa cabbage, gochugaru (Korean red pepper flakes), shrimp paste,
+             fish sauce, apple, onion, rice flour, green onion, garlic, ginger, sugar, salt</p>
         </div>
       </div>
 
@@ -177,7 +168,7 @@
 
       <div class="bagel-container">
         <div class="bagel-entry">
-          <h3>Cranberry Walnut</h3>
+          <h3>Cranberry Walnut $3.00</h3>
           <img src="walnut.jpg" alt="Cranberry Walnut Bagel" />
           <p>Ingredients: bread flour, cranberries, walnuts, sugar, cinnamon, yeast, salt</p>
         </div>
@@ -185,7 +176,7 @@
 
       <div class="bagel-container">
         <div class="bagel-entry">
-          <h3>Sweet Potato</h3>
+          <h3>Sweet Potato $3.00</h3>
           <img src="potato.jpg" alt="Sweet Potato Bagel" />
           <p>Ingredients: bread flour, sweet potato, sugar, yeast, salt</p>
         </div>
@@ -193,25 +184,20 @@
 
       <div class="bagel-container">
         <div class="bagel-entry">
-          <h3>Sweet Red Bean w/ Mochi</h3>
+          <h3>Sweet Red Bean w/ Mochi $3.50</h3>
           <img src="redbean.jpg" alt="Plain bagel with sweet red bean and mochi" />
           <p>Ingredients: bread flour, sweet red bean, mochi, dairy-free cream cheese, sugar, yeast, salt</p>
           <p>Mochi ingredients: sweet rice flour, sugar, potato starch</p>
-   			
-			<div class="bagel-container">
-							<div class="bagel-entry">
-								<h3>Matcha w/ Red Bean</h3>
-								<img src="matcha.jpg" alt="Matcha Bagel with red bean" />
-								<p>Ingredients: bread flour, sweet red bean, matcha powder, sugar, yeast, salt</p>
-							</div>
+        </div>
+      </div>
 
-
-							<div class="bagel-container">
-								<div class="bagel-entry">
-									<h3>Apple Crisp</h3>
-									<img src="matcha.jpg" alt="Cinnamon Bagel with apple and streusel topping" />
-									<p>Ingredients: bread flour, apples, oats, dairy-free butter, sugar, cinnamon, yeast, salt</p>
-								</div>
+				<div class="bagel-container">
+					<div class="bagel-entry">
+						<h3>Apple Crisp $3.50</h3>
+							<img src="apple.jpg" alt="Cinnamon Bagel with apple and streusel topping" />
+							<p>Ingredients: bread flour, apples, oats, dairy-free butter, sugar, cinnamon, yeast, salt</p>
+            </div>
+          </div>
         <!-- Repeat the structure for other bagels -->
 
       </div>
@@ -219,20 +205,7 @@
   </section>
 
   <footer>
-    <div class="footerContainer">
-      <div class="footerNav">
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="orders.html">Order</a></li>
-          <li><a href="me.html">About me</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footerBottom">
-      <p>&copy; 2022 Erin Lee's Bagel Shop. All rights reserved.</p>
-    </div>
+    <p>&copy; 2022 Erin Lee's Bagel Shop. All rights reserved.</p>
   </footer>
 
 </body>
