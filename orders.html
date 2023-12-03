@@ -154,6 +154,13 @@
       cursor: pointer;
     }
 
+    textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
     footer {
       padding: 20px;
       text-align: center;
@@ -210,6 +217,9 @@
       <label for="quantity">Quantity:</label>
       <input type="number" id="quantity" name="quantity" min="1" required>
 
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or notes"></textarea>
+    
       <button type="button" onclick="submitOrder()">Submit Order</button>
     </form>
 
